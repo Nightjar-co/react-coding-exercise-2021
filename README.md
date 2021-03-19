@@ -27,7 +27,7 @@ The events load asynchronously in the browser. While they are loading, keep the 
 they are ready, have the title change to “Results: n events found” where _n_ is the total number of events that were
 received.
 
-![Illustration of results count](https://github.com/Nightjar-co/react-coding-exercise/blob/master/screenshots/results-count.png?raw=true)
+![Illustration of results count](https://raw.githubusercontent.com/Nightjar-co/react-coding-exercise-2021/main/screenshots/results-count.png)
 
 ### 3. Display a loading indicator while the events are loading
 
@@ -52,7 +52,7 @@ user in scenarios such as this.
 
 Go back to http://localhost:3000/ and try clicking the ♡ icon on a tile. Is it working?
 
-![Illustration of favourites button](https://github.com/Nightjar-co/react-coding-exercise/blob/master/screenshots/favourites-button.png?raw=true)
+![Illustration of favourites button](https://raw.githubusercontent.com/Nightjar-co/react-coding-exercise-2021/main/screenshots/favourites-button.png)
 
 If you check in the Redux dev tools extension, you see that an action is dispatched but the state doesn’t change. Let’s
 fix that!

@@ -1,23 +1,28 @@
 import React from 'react'
 import { createUseStyles } from 'react-jss'
 import { useSelector } from 'react-redux'
-import { getEvents, isEventsReady } from '../selectors'
+import { getEvents, getEventsCount, getEventsError, isEventsReady } from '../selectors'
 import { ReactComponent as TitleIcon } from '../icons/vivid-angle-top-left.svg'
 import theme from '../style/theme'
 import Event from './Event'
+import Preload from './Preload'
+import Error from './Error'
 
 const Events = () => {
   const classes = useStyles()
   const ready = useSelector(isEventsReady)
   const events = useSelector(getEvents)
+  const eventsCount = useSelector(getEventsCount)
+  const error = useSelector(getEventsError)
 
   return (
     <div className={classes.container}>
       <h3 className={classes.title}>
         <TitleIcon className={classes.titleIcon} />
-        Results
+        Results{eventsCount ? `: ${eventsCount} Events Found` : null}
       </h3>
-      {!ready && <p>Loading...</p>}
+      {!ready && !error && <Preload />}
+      {error && <Error />}
       {ready && (
         <div className={classes.tilesWrapper}>
           <div className={classes.tiles}>
