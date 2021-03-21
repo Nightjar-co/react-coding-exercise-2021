@@ -4,7 +4,8 @@ export const colors = {
   lightText: '#9a9a9a',
   text: '#292929',
   primary: '#dc1a83',
-  white: '#fff'
+  white: '#fff',
+  preloadBackgroundColor: '#cdcdcd'
 }
 
 export default {

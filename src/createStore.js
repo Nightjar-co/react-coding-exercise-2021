@@ -3,6 +3,7 @@ import reducers from './reducers'
 import rejectedPromiseMiddleware from './middlewares/rejectedPromise'
 import promiseMiddleware from 'redux-promise-middleware'
 import eventsMiddleware from './middlewares/events'
+import favouritesMiddleware from './middlewares/favourites'
 
 export default function (preloadedState) {
   let compose = defaultCompose
@@ -17,7 +18,8 @@ export default function (preloadedState) {
   const enhancers = compose(applyMiddleware(
     rejectedPromiseMiddleware,
     promiseMiddleware,
-    eventsMiddleware
+    eventsMiddleware,
+    favouritesMiddleware
   ))
 
   const store = createStore(rootReducer, preloadedState, enhancers)
